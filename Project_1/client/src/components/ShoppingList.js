@@ -43,7 +43,7 @@ class ShoppingList extends Component{
 
                 <ListGroup>
                     <TransitionGroup className="shopping-list">
-                      {items.map(({id,name})=>{
+                      {items.map(({id,name})=>(
                         <CSSTransition key={id} timeout={500} className="fade">
                             <ListGroupItem>
                                 <Button  
@@ -51,13 +51,14 @@ class ShoppingList extends Component{
                                 color="danger"
                                 size="sm"
                                 onClick={()=>this.setState(state=>({
-                                    items:state.items.filter(item=>item.id !== id)
-                                }))}
-                                >&times;</Button>
+                                    items:state.items.filter(item=>item.id !== id) 
+                                }))}>
+                                &times;
+                                </Button>
                                 {name}
                             </ListGroupItem>
                         </CSSTransition>
-                      })}
+                      ))}
                     </TransitionGroup>
                 </ListGroup>
             </Container>
