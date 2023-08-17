@@ -15,6 +15,9 @@ class ShoppingList extends Component{
 
     render(){
         const {items}=this.state;
+        const s={
+            color:"red"
+        }
         return(
             <Container>
                 <Button 
@@ -46,7 +49,7 @@ class ShoppingList extends Component{
                       {this.state.items.map((data)=>(
                         <CSSTransition key={data.id} timeout={500} className="fade">
                             <ListGroupItem>
-                            {data.name}
+                            <h1 style={s}>{data.name}</h1>
                                 
                             </ListGroupItem>
                         </CSSTransition>
